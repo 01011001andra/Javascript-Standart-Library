@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegExp</title>
+</head>
+
+<body>
+  <script>
+
+    {
+
+      // membuat regex ada 3 cara, fungsinya mencari data
+
+      const regex1 = /yandra/;
+      const regex2 = new RegExp("yandra");
+      const regex3 = new RegExp(/yandra/);
+
+    }
+
+    {
+
+      // test regex
+      const name = "Yandra Muslim";
+      const regex = /Muslim/;
+
+      const result = regex.exec(name);
+      console.info(result);
+      console.info(regex.exec("tidakAda"));
+
+      const test = regex.test(name);
+      console.info(test);
+      console.info(regex.test("tidakAda"));
+
+    }
+
+    {
+
+      // regex modifier
+      const name = "Yandra Muslim\nyandra muslim\nyandra Muslim";
+      const regex1 = /yandra/ig;
+      const regex2 = /Muslim/ig;
+
+      let result;
+      while ((result = regex1.exec(name)) !== null) {
+        console.info(result);
+      }
+
+      while ((result = regex2.exec(name)) !== null) {
+        console.info(result);
+      }
+
+      {
+
+        // advanced regex
+
+        const regex = /yandr[aiueo]/ig
+
+        const name = "yandra yandri yandru yandre yandro yandrw";
+        let result;
+        while ((result = regex.exec(name)) !== null) {
+          console.info(result);
+        }
+
+      }
+
+      {
+        // Regexp di string
+
+        const string = "yandra yandri yandru yandre yandro yandrw";
+
+        console.info(string.match(/yandr[aiueo]/ig)); // ["yandra yandri yandru yandre yandro"]
+        console.info(string.search(/yandr[aiueo]/ig)); // 0
+        console.info(string.replace(/yandr[aiueo]/i, "kamu")); // kamu yandri yandru yandre yandro yandrw
+        console.info(string.replaceAll(/yandr[aiueo]/ig, "kamu")); // kamu kamu kamu kamu kamu yandrw
+        console.info(string.split(/y/ig)); // semua huruf y ilang
+      }
+
+
+    }
+  </script>
+</body>
+
+</html>
