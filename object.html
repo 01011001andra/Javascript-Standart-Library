@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+
+<body>
+  <script>
+
+    {
+
+      // array freeze & seal
+
+      const person = {
+        firstName: "Yandra",
+        lastName: "Muslim"
+      };
+
+      // Object.freeze(person); // tidak bisa ditambah, didelete, dan diubah
+      Object.seal(person); // tidak bisa ditambah, didelete, tapi bisa diubah
+
+      person.firstName = "Monkey"; // tidak berubah
+      delete person.firstName; // tidak berubah
+
+      console.log(person);
+
+    }
+
+    {
+
+      // array assign
+
+      const target = {
+        firstName: "Yandra"
+      };
+      const source = {
+        firstName: "Yand",
+        lastName: "Muslim"
+      };
+
+      console.info(target);
+      Object.assign(target, source); // target akan di copy oleh source dan direplace jika ada yang sama
+      console.info(target);
+      console.info(source);
+
+    }
+    {
+
+      // object property name dan value
+      const names = {
+        firstName: "Monkey",
+        lastName: "Luffy"
+      };
+
+      console.info(Object.values(names));
+      console.info(Object.getOwnPropertyNames(names));
+
+    }
+
+  </script>
+</body>
+
+</html>

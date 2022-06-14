@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array</title>
+</head>
+
+<body>
+  <script>
+
+    {
+      // array forEach
+      const array = ["Yandra", "Musilm"];
+      array.forEach(function (value, index) {
+        console.info(`${index} : ${value}`);
+      });
+
+      array.forEach(
+        (value, index) => console.info(`${index} : ${value}`)
+      );
+
+      array.forEach(
+        value => console.info(`${value}`)
+      );
+    }
+    {
+      // array queue
+      const queue = [];
+
+      //akan di masukkan kedalam array
+      queue.push("Yandra");
+      queue.push("D.");
+      queue.push("Muslim");
+
+      console.info(queue);
+      //akan di keluarkan dari depan (queue = antrian)
+      console.info(queue.shift());
+      console.info(queue.shift());
+      console.info(queue.shift());
+      console.info(queue.shift());
+
+      console.info(queue);
+
+    }
+    {
+      // array stack
+      const stack = [];
+
+      //akan di masukkan kedalam array
+      stack.push("Monkey");
+      stack.push("D.");
+      stack.push("Luffy");
+
+      console.info(stack);
+      //akan di keluarkan dari belakang (stack = tumpukkan)
+      console.info(stack.pop());
+      console.info(stack.pop());
+      console.info(stack.pop());
+      console.info(stack.pop());
+
+      console.info(stack)
+    }
+    {
+
+      // array search
+      const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+      console.info(source.find(value => value > 3));
+      console.info(source.findIndex(value => value > 3));
+      console.info(source.includes(2));
+      console.info(source.indexOf(5));
+      console.info(source.lastIndexOf(5));
+
+    }
+    {
+
+      // array filter
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const ganjil = numbers.filter(value => value % 2 === 0);
+      const genap = numbers.filter(value => value % 2 === 1);
+
+      console.info(numbers);
+      console.info(ganjil);
+      console.info(genap);
+
+
+    }
+    {
+
+      // array transform
+      const names = ["Yandra", "Muslim"];
+      const nameUpper = names.map(value => value.toUpperCase());
+
+      console.info(nameUpper);
+
+      const namesReduce = names.reduce((before, value) => before + " " + value);
+      console.info(namesReduce);
+
+      const namesReduceRight = names.reduceRight((before, value) => before + " " + value);
+      console.info(namesReduceRight);
+
+      const numbers = [1, 2, 3, 4, 5];
+      const sum = numbers.reduce((result, value) => result + value);
+      console.info(sum);
+
+    }
+
+  </script>
+</body>
+
+</html>
